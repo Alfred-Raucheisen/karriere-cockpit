@@ -506,7 +506,8 @@ function renderBonusItems() {
         + '<div class="b-check" style="' + chkStyle + '">' + (isSel?'\u2713':'') + '</div>'
         + '<div class="b-score">' + q.score + '</div>'
         + '<div class="b-text"><div class="b-q">' + QUESTIONS[q.qIdx] + '</div>'
-        + '<div class="b-anchor">' + q.anchor.name + extra + '</div></div></div>';
+        + (isFixed ? '<div class="b-anchor"><em style="color:var(--green)">Bonus gesichert</em></div>' : '')
+        + '</div></div>';
     });
     html += '</div>';
   });
