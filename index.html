@@ -585,14 +585,30 @@ function submitAndShow() {
 
 // ── COACH RESULTS VIEW ────────────────────────────────────────────────────────
 function renderCoachResults(decoded) {
-  const { scores, name, date } = decoded;
+  const { scores, answers: savedAnswers, bonus: savedBonus, name, date } = decoded;
+
+  // Rehydrate full scores from saved answers + bonus if available
+  let fullScores;
+  if (savedAnswers && savedBonus !== undefined) {
+    // Reconstruct from raw answers
+    answers = savedAnswers;
+    selectedBonus = new Set(savedBonus);
+    fullScores = computeScores();
+  } else {
+    // Fallback: merge saved score data with ANCHORS lookup
+    fullScores = scores.map(s => {
+      const anchor = ANCHORS.find(a => a.code === s.code);
+      return { ...anchor, ...s };
+    }).sort((a, b) => b.avg - a.avg);
+  }
+
   showScreen('results');
 
   document.getElementById('resultName').textContent = name || 'Auswertung';
   document.getElementById('resultMeta').textContent = date ? date + ' · Karriere-Cockpit' : 'Karriere-Cockpit';
 
-  const top = scores[0];
-  const maxAvg = scores[0].avg;
+  const top = fullScores[0];
+  const maxAvg = fullScores[0].avg;
 
   document.getElementById('topAnchor').innerHTML =
     '<div class="top-anchor">'
@@ -603,7 +619,7 @@ function renderCoachResults(decoded) {
     + '</div>';
 
   const scaleTo = maxAvg + 0.8;
-  document.getElementById('barChart').innerHTML = scores.map((s, i) =>
+  document.getElementById('barChart').innerHTML = fullScores.map((s, i) =>
     '<div class="bar-row">'
     + '<div class="bar-label">' + s.name + '</div>'
     + '<div class="bar-track"><div class="bar-fill ' + (i===0?'top':'') + '" style="width:' + (s.avg/scaleTo*100) + '%"></div></div>'
@@ -611,7 +627,7 @@ function renderCoachResults(decoded) {
     + '</div>'
   ).join('');
 
-  document.getElementById('anchorDetails').innerHTML = scores.map(s =>
+  document.getElementById('anchorDetails').innerHTML = fullScores.map(s =>
     '<div class="anchor-detail"><h4>'
     + s.name
     + ' <span class="score-pill">' + s.avg + '</span>'
@@ -620,7 +636,7 @@ function renderCoachResults(decoded) {
   ).join('');
 
   // Raw data
-  document.getElementById('rawData').textContent = scores.map(s => s.code + ': ' + s.avg + (s.bonusCount ? ' (+' + s.bonusCount + ' Bonus)' : '')).join(' | ');
+  document.getElementById('rawData').textContent = fullScores.map(s => s.code + ': ' + s.avg + (s.bonusCount ? ' (+' + s.bonusCount + ' Bonus)' : '')).join(' | ');
 
   setTimeout(() => {
     document.querySelectorAll('.bar-fill').forEach(b => {
