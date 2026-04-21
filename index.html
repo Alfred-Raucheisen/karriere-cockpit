@@ -412,7 +412,17 @@ function showScreen(id) {
 }
 
 // ── QUIZ ──────────────────────────────────────────────────────────────────────
-function startQuiz() { showScreen('quiz'); renderQuestion(); }
+function startQuiz() {
+  const name = document.getElementById('nameInput').value.trim();
+  if (!name) {
+    const el = document.getElementById('nameInput');
+    el.style.borderColor = '#C0392B';
+    el.placeholder = 'Bitte Name eintragen';
+    el.focus();
+    return;
+  }
+  showScreen('quiz'); renderQuestion();
+}
 
 function renderQuestion() {
   const pct = (current / 40) * 100;
