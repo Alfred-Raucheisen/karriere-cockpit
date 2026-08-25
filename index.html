@@ -4,15 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Karriere-Cockpit</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy: #1a2744;
+    --navy: #2d5a3d;
     --gold: #C8A84B;
-    --cream: #FAF8F4;
-    --light: #EEF3FA;
-    --border: #D4DDF0;
-    --muted: #6b7a99;
+    --cream: #faf8f4;
+    --light: #f1f4ee;
+    --border: #e0dcd2;
+    --muted: #6b6b65;
     --blue: #2E75B6;
     --green: #1E6B3C;
     --card: #FFFFFF;
@@ -20,7 +20,7 @@
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--navy); min-height: 100vh; }
+  body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--navy); min-height: 100vh; }
 
   .container { max-width: 760px; margin: 0 auto; padding: 0 24px; }
 
@@ -43,7 +43,7 @@
     background: rgba(46,117,182,0.15);
   }
   .hero-header .kicker { color: var(--gold); font-size: 11px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; display: block; margin-bottom: 12px; }
-  .hero-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 6vw, 54px); color: white; line-height: 1.1; }
+  .hero-header h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 6vw, 54px); color: white; line-height: 1.1; }
   .hero-header h1 em { font-style: italic; color: var(--gold); }
   .hero-header p { color: rgba(255,255,255,0.7); font-size: 16px; font-weight: 300; margin-top: 14px; max-width: 500px; margin-left: auto; margin-right: auto; }
 
@@ -56,7 +56,7 @@
 
   .intro-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 32px 0; }
   .intro-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 16px; }
-  .intro-card .num { font-family: 'Playfair Display', serif; font-size: 30px; color: var(--gold); opacity: 0.7; line-height: 1; margin-bottom: 6px; }
+  .intro-card .num { font-family: 'Cormorant Garamond', serif; font-size: 30px; color: var(--gold); opacity: 0.7; line-height: 1; margin-bottom: 6px; }
   .intro-card p { font-size: 13px; color: var(--muted); line-height: 1.5; }
 
   .scale-legend { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px 24px; margin-bottom: 28px; display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
@@ -66,10 +66,10 @@
   /* Name/Date inputs */
   .name-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 28px; }
   .name-field label { display: block; font-size: 12px; font-weight: 500; color: var(--muted); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 6px; }
-  .name-field input { width: 100%; padding: 12px 14px; border: 1.5px solid var(--border); border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 15px; color: var(--navy); background: var(--card); transition: border-color 0.2s; }
+  .name-field input { width: 100%; padding: 12px 14px; border: 1.5px solid var(--border); border-radius: 10px; font-family: 'Jost', sans-serif; font-size: 15px; color: var(--navy); background: var(--card); transition: border-color 0.2s; }
   .name-field input:focus { outline: none; border-color: var(--gold); }
 
-  .btn-start { background: var(--navy); color: white; border: none; border-radius: 12px; padding: 16px 48px; font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 500; cursor: pointer; transition: all 0.2s; }
+  .btn-start { background: var(--navy); color: white; border: none; border-radius: 12px; padding: 16px 48px; font-family: 'Jost', sans-serif; font-size: 16px; font-weight: 500; cursor: pointer; transition: all 0.2s; }
   .btn-start:hover { background: var(--blue); transform: translateY(-1px); }
 
   /* ── QUIZ ── */
@@ -87,12 +87,12 @@
   .rating-label { font-size: 11px; color: var(--muted); min-width: 58px; }
   .rating-label.right { text-align: right; }
   .rating-btns { display: flex; gap: 8px; flex: 1; justify-content: center; }
-  .r-btn { width: 48px; height: 48px; border: 2px solid var(--border); border-radius: 10px; background: transparent; font-family: 'Playfair Display', serif; font-size: 18px; color: var(--muted); cursor: pointer; transition: all 0.15s; }
+  .r-btn { width: 48px; height: 48px; border: 2px solid var(--border); border-radius: 10px; background: transparent; font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--muted); cursor: pointer; transition: all 0.15s; }
   .r-btn:hover { border-color: var(--gold); color: var(--gold); background: rgba(200,168,75,0.06); }
   .r-btn.selected { background: var(--navy); border-color: var(--navy); color: white; }
 
   .quiz-nav { display: flex; justify-content: space-between; align-items: center; padding-top: 8px; }
-  .btn-nav { padding: 12px 28px; border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 15px; cursor: pointer; transition: all 0.2s; font-weight: 500; }
+  .btn-nav { padding: 12px 28px; border-radius: 10px; font-family: 'Jost', sans-serif; font-size: 15px; cursor: pointer; transition: all 0.2s; font-weight: 500; }
   .btn-prev { background: transparent; border: 1.5px solid var(--border); color: var(--muted); }
   .btn-prev:hover { border-color: var(--gold); color: var(--gold); }
   .btn-next { background: var(--navy); border: none; color: white; }
@@ -101,13 +101,13 @@
 
   /* ── BONUS ── */
   #bonus { padding: 60px 0 80px; }
-  #bonus h2 { font-family: 'Playfair Display', serif; font-size: 30px; color: var(--navy); margin-bottom: 12px; }
+  #bonus h2 { font-family: 'Cormorant Garamond', serif; font-size: 30px; color: var(--navy); margin-bottom: 12px; }
   #bonus .intro-text { font-size: 15px; color: var(--muted); line-height: 1.65; margin-bottom: 20px; }
 
   .hint-box { background: rgba(200,168,75,0.08); border: 1px solid rgba(200,168,75,0.3); border-radius: 12px; padding: 14px 18px; margin-bottom: 24px; font-size: 13px; color: var(--muted); line-height: 1.5; display: flex; gap: 10px; }
 
   .counter-wrap { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 20px; text-align: center; margin-bottom: 24px; }
-  .counter-big { font-family: 'Playfair Display', serif; font-size: 48px; line-height: 1; transition: all 0.2s; }
+  .counter-big { font-family: 'Cormorant Garamond', serif; font-size: 48px; line-height: 1; transition: all 0.2s; }
   .counter-big.done { color: var(--green); }
   .counter-big.pending { color: var(--gold); }
   .counter-sub { font-size: 13px; color: var(--muted); margin-top: 4px; }
@@ -122,13 +122,13 @@
 
   .b-check { width: 22px; height: 22px; flex-shrink: 0; margin-top: 2px; border: 2px solid var(--border); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 13px; transition: all 0.15s; }
   .bonus-item.selected .b-check { background: var(--green); border-color: var(--green); color: white; }
-  .b-score { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--gold); flex-shrink: 0; min-width: 22px; text-align: center; margin-top: 1px; }
+  .b-score { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; color: var(--gold); flex-shrink: 0; min-width: 22px; text-align: center; margin-top: 1px; }
   .b-text { flex: 1; }
   .b-q { font-size: 14px; color: var(--navy); line-height: 1.5; margin-bottom: 4px; }
   .b-anchor { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
   .bonus-item.selected .b-anchor { color: var(--green); }
 
-  .btn-to-results { width: 100%; padding: 16px; background: var(--navy); color: white; border: none; border-radius: 12px; font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 500; cursor: pointer; transition: all 0.2s; margin-top: 8px; }
+  .btn-to-results { width: 100%; padding: 16px; background: var(--navy); color: white; border: none; border-radius: 12px; font-family: 'Jost', sans-serif; font-size: 16px; font-weight: 500; cursor: pointer; transition: all 0.2s; margin-top: 8px; }
   .btn-to-results:hover:not(:disabled) { background: var(--blue); }
   .btn-to-results:disabled { opacity: 0.35; cursor: default; }
 
@@ -136,7 +136,7 @@
   #confirmation { padding: 80px 0; }
   .conf-card { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 48px 40px; text-align: center; max-width: 520px; margin: 0 auto; }
   .conf-icon { width: 64px; height: 64px; background: rgba(30,107,60,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; margin: 0 auto 24px; }
-  .conf-card h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--navy); margin-bottom: 12px; }
+  .conf-card h2 { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--navy); margin-bottom: 12px; }
   .conf-card p { color: var(--muted); font-size: 15px; line-height: 1.65; margin-bottom: 8px; }
   .conf-sub { font-size: 13px !important; color: var(--muted); }
   .conf-status { display: inline-block; margin-top: 20px; padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 500; }
@@ -147,34 +147,34 @@
   /* ── RESULTS (coach view) ── */
   #results { padding: 60px 0 80px; }
   .results-header { text-align: center; margin-bottom: 40px; }
-  .results-header h2 { font-family: 'Playfair Display', serif; font-size: 38px; color: var(--navy); margin-bottom: 4px; }
+  .results-header h2 { font-family: 'Cormorant Garamond', serif; font-size: 38px; color: var(--navy); margin-bottom: 4px; }
   .results-meta { font-size: 14px; color: var(--muted); margin-top: 4px; }
 
-  .top-anchor { background: linear-gradient(135deg, var(--navy), #243560); color: white; border-radius: 20px; padding: 36px; margin-bottom: 32px; position: relative; overflow: hidden; }
+  .top-anchor { background: linear-gradient(135deg, var(--navy), #3d7a52); color: white; border-radius: 20px; padding: 36px; margin-bottom: 32px; position: relative; overflow: hidden; }
   .top-anchor::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; background: rgba(200,168,75,0.12); border-radius: 50%; }
   .top-anchor .ta-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
-  .top-anchor .ta-name { font-family: 'Playfair Display', serif; font-size: 30px; margin-bottom: 8px; position: relative; z-index: 1; }
-  .top-anchor .ta-score { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 300; color: var(--gold); line-height: 1; }
+  .top-anchor .ta-name { font-family: 'Cormorant Garamond', serif; font-size: 30px; margin-bottom: 8px; position: relative; z-index: 1; }
+  .top-anchor .ta-score { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 300; color: var(--gold); line-height: 1; }
   .top-anchor .ta-desc { font-size: 14px; opacity: 0.82; line-height: 1.65; margin-top: 16px; max-width: 480px; }
 
   .chart-section { margin-bottom: 36px; }
-  .chart-section h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--navy); margin-bottom: 18px; }
+  .chart-section h3 { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--navy); margin-bottom: 18px; }
   .bar-chart { display: flex; flex-direction: column; gap: 11px; }
   .bar-row { display: grid; grid-template-columns: 200px 1fr 48px; gap: 12px; align-items: center; }
   .bar-label { font-size: 13px; color: var(--muted); text-align: right; line-height: 1.3; }
   .bar-track { background: var(--light); border-radius: 6px; height: 26px; overflow: hidden; }
   .bar-fill { height: 100%; border-radius: 6px; background: linear-gradient(90deg, var(--gold), var(--blue)); transition: width 1s ease; }
   .bar-fill.top { background: linear-gradient(90deg, var(--navy), var(--blue)); }
-  .bar-val { font-family: 'Playfair Display', serif; font-size: 15px; color: var(--navy); font-weight: 700; }
+  .bar-val { font-family: 'Cormorant Garamond', serif; font-size: 15px; color: var(--navy); font-weight: 700; }
   .bar-val .star { font-size: 10px; color: var(--green); display: block; line-height: 1.2; }
 
   .anchor-detail { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 26px; margin-bottom: 14px; }
-  .anchor-detail h4 { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--navy); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-  .score-pill { font-size: 12px; background: var(--gold); color: white; border-radius: 20px; padding: 2px 10px; font-family: 'DM Sans', sans-serif; }
-  .bonus-pill { font-size: 12px; background: rgba(30,107,60,0.12); color: var(--green); border-radius: 20px; padding: 2px 10px; font-family: 'DM Sans', sans-serif; }
+  .anchor-detail h4 { font-family: 'Cormorant Garamond', serif; font-size: 17px; color: var(--navy); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .score-pill { font-size: 12px; background: var(--gold); color: white; border-radius: 20px; padding: 2px 10px; font-family: 'Jost', sans-serif; }
+  .bonus-pill { font-size: 12px; background: rgba(30,107,60,0.12); color: var(--green); border-radius: 20px; padding: 2px 10px; font-family: 'Jost', sans-serif; }
   .anchor-detail p { font-size: 14px; color: var(--muted); line-height: 1.65; }
 
-  .btn-restart { display: inline-block; margin-top: 28px; background: transparent; border: 1.5px solid var(--border); color: var(--muted); border-radius: 10px; padding: 12px 28px; font-family: 'DM Sans', sans-serif; font-size: 14px; cursor: pointer; transition: all 0.2s; }
+  .btn-restart { display: inline-block; margin-top: 28px; background: transparent; border: 1.5px solid var(--border); color: var(--muted); border-radius: 10px; padding: 12px 28px; font-family: 'Jost', sans-serif; font-size: 14px; cursor: pointer; transition: all 0.2s; }
   .btn-restart:hover { border-color: var(--gold); color: var(--gold); }
 
   /* raw data toggle */
